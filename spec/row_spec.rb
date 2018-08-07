@@ -29,4 +29,22 @@ describe SidekiqLogAnalyser::Row do
     expect(row5.start?).to eq(false)
     expect(row5.end?).to eq(false)
   end
+
+  it 'returns start_match' do
+    row = SidekiqLogAnalyser::Row.new(line2)
+    expect(row.metadata).to eq({:datetime=>Time.parse('2017-05-31T15:00:05.753Z'), :job_id=>"JID-16a22bc4cb44c2d69ad536a9", :worker=>"UpdateCountersWorker"})
+  end
+
+  it 'returns end_match' do
+    row = SidekiqLogAnalyser::Row.new(line3)
+    expect(row.metadata).to eq({:datetime=>Time.parse('2017-05-31T15:00:06.590Z'), :job_id=>"JID-16a22bc4cb44c2d69ad536a9", :worker=>"UpdateCountersWorker", :duration=>0.837})
+  end
+
+  it 'not fails metadata for bad data' do
+    row = SidekiqLogAnalyser::Row.new(line4)
+    expect(row.metadata).to eq({})
+
+    row = SidekiqLogAnalyser::Row.new(line5)
+    expect(row.metadata).to eq({})
+  end
 end

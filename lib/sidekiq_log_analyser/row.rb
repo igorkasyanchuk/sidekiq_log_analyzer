@@ -16,5 +16,30 @@ module SidekiqLogAnalyser
       end_match != nil && end_match.length > 0
     end
 
-  end  
+    def valid?
+      start? || end?
+    end
+
+    def metadata
+      if start?
+        {
+          datetime: Time.parse(start_match[1]),
+          worker: start_match[3].split(' ').last,
+          job_id: start_match[4],
+          type: :start
+        }
+      elsif end?
+        {
+          datetime:  Time.parse(end_match[1]),
+          worker: end_match[3].split(' ').last,
+          job_id: end_match[4],
+          duration: end_match[5].to_f,
+          type: :end
+        }
+      else
+        {}
+      end
+    end
+
+  end
 end
