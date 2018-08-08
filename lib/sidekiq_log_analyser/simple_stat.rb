@@ -1,33 +1,14 @@
 module SidekiqLogAnalyser
   class SimpleStat
-    attr_reader :stats
+    extend Forwardable
 
-    def initialize(lines)
-      @stats = []
-      lines.each do |line|
-        row = Row.new(line)
-        if row.valid?
-          @stats << row.metadata
-        end
-      end
-    end
+    attr_reader :collection
 
-    def report
-      {
-        total: total,
-        avg: avg,
-        timeline: timeline
-      }
-    end
+    def_delegator :collection, :start_collection
+    def_delegator :collection, :end_collection
 
-    private
-
-    def collection(type)
-      @stats.select{|metadata| metadata[:type] == type}
-    end
-
-    def end_collection
-      @end_collection ||= collection(:end).group_by{|metadata| metadata[:worker]}
+    def initialize(collection)
+      @collection = collection
     end
 
     def total

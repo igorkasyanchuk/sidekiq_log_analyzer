@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "pry"
+require "groupdate"
 require "sidekiq_log_analyser"
 
 # You can add fixtures and/or initialization code here to make experimenting

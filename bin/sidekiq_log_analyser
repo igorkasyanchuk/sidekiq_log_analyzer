@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/sidekiq_log_analyser.rb"
+
+filename = ARGV[0] || 'log/sidekiq.log'
+
+begin
+  SidekiqLogAnalyser::App.run(filename)
+rescue Errno::ENOENT
+  puts "File not found: #{ARGV[0] || 'log/sidekiq.log'}".colorize(:red)
+  puts
+  puts "Sample:".colorize(:green)
+  puts "sidekiq_log_analyser ./log/sidekiq.log".colorize(:green)
+end
