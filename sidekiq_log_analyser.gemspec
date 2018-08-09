@@ -23,6 +23,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "groupdate"
   spec.add_dependency "colorize"
+  spec.add_dependency "terminal-table"
+  spec.add_dependency "activesupport"
+
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"

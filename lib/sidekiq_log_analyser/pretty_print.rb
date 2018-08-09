@@ -11,6 +11,7 @@ module SidekiqLogAnalyser
       end
       puts(table)
       puts
+      puts
     end
 
     def PrettyPrint.print_avg_report(report)
@@ -20,6 +21,7 @@ module SidekiqLogAnalyser
         end
       end
       puts(table)
+      puts
       puts
     end
 
@@ -31,6 +33,7 @@ module SidekiqLogAnalyser
           end
         end
         puts(table)
+        puts
         puts
       end
     end
