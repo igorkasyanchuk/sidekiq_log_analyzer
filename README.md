@@ -2,7 +2,7 @@
 
 SidekiqLogAnalyser gem allows to see summary of your sidekiq workers (based on log file). 
 
-Main reports:
+Main reports (for the last 30 days):
 
 - summary of all workers (worker -> count of runs)
 - average time per worker (worker -> avg in seconds)
@@ -22,6 +22,13 @@ Install it yourself as:
 Just run `sidekiq_log_analyser` in any folder and specify path to sidekiq.log file. 
 
 By default it's `log/sidekiq.log` or you can do `sidekiq_log_analyser path/to/file.log`.
+
+## TODO
+
+- specify range for dates in report
+- show crashes and maybe some other info
+- export to HTML/JS/CSS format
+- export to PDF
 
 ## Development
 
