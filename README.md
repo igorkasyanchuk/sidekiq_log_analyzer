@@ -1,28 +1,27 @@
 # SidekiqLogAnalyser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sidekiq_log_analyser`. To experiment with that code, run `bin/console` for an interactive prompt.
+SidekiqLogAnalyser gem allows to see summary of your sidekiq workers (based on log file). 
 
-TODO: Delete this and the text above, and describe your gem
+Main reports:
+
+- summary of all workers (worker -> count of runs)
+- average time per worker (worker -> avg in seconds)
+- summary for each worker groupped by hour (datetime -> count of runs + avg time)
+
+## Sample
+[![Sample](https://raw.githubusercontent.com/igorkasyanchuk/sidekiq_log_analyzer/master/docs/sidekiq_log_analyser.png)](https://raw.githubusercontent.com/igorkasyanchuk/sidekiq_log_analyzer/master/docs/sidekiq_log_analyser.png)
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'sidekiq_log_analyser'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install sidekiq_log_analyser
 
 ## Usage
 
-TODO: Write usage instructions here
+Just run `sidekiq_log_analyser` in any folder and specify path to sidekiq.log file. 
+
+By default it's `log/sidekiq.log` or you can do `sidekiq_log_analyser path/to/file.log`.
 
 ## Development
 
