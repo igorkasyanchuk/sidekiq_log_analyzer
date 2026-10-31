@@ -1,5 +1,12 @@
 # Sidekiq Log Analyser
 
+<a href="https://igorkasyanchuk.com/apps?ref=sidekiq_log_analyzer">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://igorkasyanchuk.com/versions/v1/banner-dark.svg">
+    <img src="https://igorkasyanchuk.com/versions/v1/banner-light.svg" width="720" alt="More tools from the author: Laki, DiffNotes and more. See all projects at igorkasyanchuk.com/apps">
+  </picture>
+</a>
+
 SidekiqLogAnalyser gem allows to see summary of your sidekiq workers (based on log file). 
 
 Main reports (for the last 30 days):
@@ -46,4 +53,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 [<img src="https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/more_gems.png?raw=true"
-/>](https://www.railsjazz.com/?utm_source=github&utm_medium=bottom&utm_campaign=sidekiq_log_analyzer)
+/>](https://www.igorkasyanchuk.com/)
